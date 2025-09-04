@@ -2,7 +2,7 @@ import initialTickets from "@/app/data";
 import { Ticket } from "../type";
 
 export const getTickets = async (): Promise<Ticket[]> => {
-  await new Promise((resolve) => setTimeout(resolve, 5000));
+  await new Promise((resolve) => setTimeout(resolve, 2000));
   return new Promise((resolve) => {
     resolve(initialTickets);
   });
