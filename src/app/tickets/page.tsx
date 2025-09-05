@@ -1,12 +1,18 @@
-import React from 'react'
+import { Heading } from "@/components/heading";
+import { Suspense } from "react";
+import { TicketList } from "@/features/ticket/components/ticket-list";
+import { Spinner } from "@/components/spinner";
 
 const TicketsPage = () => {
   return (
-    <div>TicketsPage
-<TicketList />
+    <div className="flex-1 flex flex-col gap-y-8">
+      <Heading title="Tickets Page" desc="All your tickets at one place" />
 
+      <Suspense fallback={<Spinner />}>
+        <TicketList />
+      </Suspense>
     </div>
-  )
-}
+  );
+};
 
-export default TicketsPage
+export default TicketsPage;

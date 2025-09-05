@@ -1,47 +1,36 @@
-# The Road to Next – Course Repo
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-This repository contains my notes, exercises, and projects as I work through [**The Road to Next**](https://www.road-to-next.com/) by **Robin Wieruch**.  
+## Getting Started
 
----
+First, run the development server:
 
-## 📖 About the Course
-**The Road to Next** is a full-stack web development course that focuses on building real-world applications with **Next.js 15**, **React 19**, and a modern tech stack.  
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-The course goes beyond just learning a framework — it covers how to think like a senior software engineer, from structured code to real-world SaaS product development.  
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Key learning areas include:
-- React Server Components & Server Actions  
-- Database modeling with **Prisma** & **Supabase**  
-- Authentication, Authorization & Security  
-- File uploads, Messaging, Emails, and Payments (**AWS S3**, **Inngest**, **Resend**, **Stripe**)  
-- UI & Styling with **Tailwind CSS** and **shadcn/ui**  
-- Deployment with **Vercel** and modern DevOps practices  
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
----
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## 🛠 Tech Stack (from the course)
-- Next.js 15 + React 19  
-- TypeScript & Zod  
-- Prisma & Supabase  
-- Tailwind CSS + shadcn/ui  
-- Oslo (Authentication)  
-- Stripe, Resend, AWS S3, Cloudflare, Inngest  
-- Git & GitHub  
+## Learn More
 
----
+To learn more about Next.js, take a look at the following resources:
 
-## 📂 Repo Structure
-- `notes/` → My notes and key takeaways  
-- `projects/` → Exercises and hands-on builds from the course  
-- `experiments/` → Sandbox for testing concepts  
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
----
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## 🎯 Goals
-- [ ] Complete the **Web Developer Journey**  
-- [ ] Complete the **Software Engineer Journey**  
-- [ ] Build and deploy a real SaaS project  
+## Deploy on Vercel
 
----
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-⭐ This repo is for learning purposes as I go through [The Road to Next](https://www.road-to-next.com/).
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
