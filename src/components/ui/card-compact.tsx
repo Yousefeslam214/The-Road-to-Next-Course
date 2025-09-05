@@ -6,7 +6,6 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
-import TicketCreateForm from "@/features/ticket/components/ticket-create-form";
 
 type CardCompactProps = {
   title: string;
