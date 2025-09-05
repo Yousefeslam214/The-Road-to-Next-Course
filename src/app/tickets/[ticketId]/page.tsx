@@ -1,5 +1,4 @@
-import initialTickets from "@/app/data";
-import { ticketPath, ticketsPath } from "@/app/path";
+import { ticketsPath } from "@/app/path";
 import { Placeholder } from "@/components/placeholder";
 import { Button } from "@/components/ui/button";
 import { TicketItem } from "@/features/ticket/components/ticket-item";
