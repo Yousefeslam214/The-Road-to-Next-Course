@@ -1,10 +1,9 @@
-import { Heading } from "@/components/heading";
 import { Suspense } from "react";
-import { TicketList } from "@/features/ticket/components/ticket-list";
+import { Heading } from "@/components/heading";
 import { Spinner } from "@/components/spinner";
-import TicketCreateForm from "@/features/ticket/components/ticket-create-form";
 import { CardCompact } from "@/components/ui/card-compact";
-
+import { TicketList } from "@/features/ticket/components/ticket-list";
+import TicketCreateForm from "@/features/ticket/components/ticket-create-form";
 
 const TicketsPage = () => {
   return (
@@ -15,8 +14,7 @@ const TicketsPage = () => {
         title="Your Tickets"
         description="Manage your tickets"
         content={<TicketCreateForm />}
-        className="w-full max-w-3xl self-center
-        "
+        className="w-full max-w-[420px] self-center "
       />
 
       <Suspense fallback={<Spinner />}>
