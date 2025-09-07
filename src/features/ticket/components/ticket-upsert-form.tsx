@@ -9,6 +9,7 @@ import { SubmitButton } from "@/components/form/submit-button";
 import { Textarea } from "@/components/ui/textarea";
 import { FieldError } from "@/components/form/field-error";
 import { EMPTY_ACTION_STATE } from "@/components/form/utils/to-action-state";
+import Form from "@/components/form/form";
 
 type TicketUpsertFormProps = {
   ticket?: Ticket;
@@ -21,7 +22,7 @@ const TicketUpsertForm = ({ ticket }: TicketUpsertFormProps) => {
   );
 
   return (
-    <form action={action} className="flex flex-col gap-y-2">
+    <Form action={action} actionState={actionState}>
       <Label htmlFor="title">Title</Label>
       <Input
         type="text"
@@ -43,7 +44,7 @@ const TicketUpsertForm = ({ ticket }: TicketUpsertFormProps) => {
       <FieldError actionState={actionState} name="content" />
       <SubmitButton label={ticket ? "Update Ticket" : "Create Ticket"} />
       {actionState.message}
-    </form>
+    </Form>
   );
 };
 

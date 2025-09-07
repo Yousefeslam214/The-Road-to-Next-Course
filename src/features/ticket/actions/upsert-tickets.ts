@@ -44,7 +44,7 @@ export const upsertTicket = async (
   revalidatePath(ticketsPath());
   if (id) redirect(ticketsPath());
 
-  return toActionState("Ticket created!", formData);
-  
+  return toActionState("SUCCESS", "Ticket created!");
+
   // { message: "Ticket created!", fieldErrors: {} };
 };

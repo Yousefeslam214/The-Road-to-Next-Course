@@ -1,4 +1,3 @@
-import { stat } from "fs";
 import { ZodError } from "zod";
 
 export type ActionState = {
@@ -21,7 +20,7 @@ export const formErrorToActionState = (
   if (error instanceof ZodError) {
     console.log(error.flatten().fieldErrors);
     return {
-      status: "error",
+      status: "ERROR",
       message: "",
       fieldErrors: error.flatten().fieldErrors,
       payload: formData,
@@ -29,7 +28,7 @@ export const formErrorToActionState = (
     };
   } else if (error instanceof Error) {
     return {
-      status: "error",
+      status: "ERROR",
       message: error.message || "Something went wrong",
       fieldErrors: {},
       payload: formData,
@@ -37,7 +36,7 @@ export const formErrorToActionState = (
     };
   }
   return {
-    status: "error",
+    status: "ERROR",
     message: "Something went wrong",
     fieldErrors: {},
     payload: formData,
