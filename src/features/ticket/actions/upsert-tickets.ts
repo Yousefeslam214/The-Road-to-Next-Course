@@ -1,5 +1,6 @@
 "use server";
 
+import { setCookieByKey } from "@/actions/cookies";
 import { ticketsPath } from "@/app/path";
 import {
   ActionState,
@@ -42,7 +43,11 @@ export const upsertTicket = async (
     // return { message: "Something went wrong", payload: formData };
   }
   revalidatePath(ticketsPath());
-  if (id) redirect(ticketsPath());
+  if (id) {
+    setCookieByKey("toast", "Ticket updated!");
+    redirect(ticketsPath());
+  }
+  setCookieByKey("toast", "Ticket created!");
 
   return toActionState("SUCCESS", "Ticket created!");
 

@@ -5,21 +5,24 @@ import { toast } from "sonner";
 
 type FormProps = {
   action: (payload: FormData) => void;
-  actionState?: ActionState;
+  actionState: ActionState;
   children: React.ReactNode;
 };
 
 const Form = ({ action, actionState, children }: FormProps) => {
-  if (actionState.message) {
-    useActionFeedback(actionState, {
-      onSuccess: ({ actionState }) => {
+  useActionFeedback(actionState, {
+    onSuccess: ({ actionState }) => {
+      if (actionState?.message) {
         toast.success(actionState.message);
-      },
-      onError: ({ actionState }) => {
+      }
+    },
+    onError: ({ actionState }) => {
+      if (actionState?.message) {
         toast.error(actionState.message);
-      },
-    });
-  }
+      }
+    },
+  });
+
   return (
     <form action={action} className="flex flex-col gap-y-2">
       {children}
