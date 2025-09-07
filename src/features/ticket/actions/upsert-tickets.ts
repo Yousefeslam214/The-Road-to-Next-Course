@@ -4,6 +4,7 @@ import { ticketsPath } from "@/app/path";
 import {
   ActionState,
   formErrorToActionState,
+  toActionState,
 } from "@/components/form/utils/to-action-state";
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
@@ -43,5 +44,7 @@ export const upsertTicket = async (
   revalidatePath(ticketsPath());
   if (id) redirect(ticketsPath());
 
-  return { message: "Ticket created!", fieldErrors: {} };
+  return toActionState("Ticket created!", formData);
+  
+  // { message: "Ticket created!", fieldErrors: {} };
 };

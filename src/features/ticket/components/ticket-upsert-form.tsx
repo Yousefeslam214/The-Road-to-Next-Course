@@ -8,6 +8,7 @@ import { upsertTicket } from "../actions/upsert-tickets";
 import { SubmitButton } from "@/components/form/submit-button";
 import { Textarea } from "@/components/ui/textarea";
 import { FieldError } from "@/components/form/field-error";
+import { EMPTY_ACTION_STATE } from "@/components/form/utils/to-action-state";
 
 type TicketUpsertFormProps = {
   ticket?: Ticket;
@@ -16,7 +17,7 @@ type TicketUpsertFormProps = {
 const TicketUpsertForm = ({ ticket }: TicketUpsertFormProps) => {
   const [actionState, action] = useActionState(
     upsertTicket.bind(null, ticket?.id || ""),
-    { message: "", fieldErrors: {} }
+    EMPTY_ACTION_STATE
   );
 
   return (
@@ -39,7 +40,7 @@ const TicketUpsertForm = ({ ticket }: TicketUpsertFormProps) => {
           (actionState.payload?.get("content") as string) ?? ticket?.content
         }
       />
-    <FieldError actionState={actionState} name="content" />
+      <FieldError actionState={actionState} name="content" />
       <SubmitButton label={ticket ? "Update Ticket" : "Create Ticket"} />
       {actionState.message}
     </form>
