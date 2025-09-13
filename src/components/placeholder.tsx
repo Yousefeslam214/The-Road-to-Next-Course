@@ -22,11 +22,7 @@ const Placeholder = ({
       {/* {icon && <div className="mb-2">{icon}</div>} */}
       <h2 className="text-lg text-center">{label}</h2>
       {button && typeof button === "object" && "type" in button
-<<<<<<< HEAD
         ? cloneElement(button, { className: "h-10" })
-=======
-        ? cloneElement(button, {})
->>>>>>> backup-main
         : null}
     </div>
   );
