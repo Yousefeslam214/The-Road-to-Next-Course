@@ -16,7 +16,7 @@ import { TICKET_STATUS_LABELS } from "@/features/ticket/constants";
 import { updateTicketStatus } from "@/features/ticket/actions/update-ticket-status";
 import { deleteTicket } from "@/features/ticket/actions/delete-ticket";
 import { toast } from "sonner";
-import {  useConfirmDialog } from "./confirm-dialog";
+import { useConfirmDialog } from "./confirm-dialog";
 import { Button } from "./ui/button";
 
 type TicketMoreMenuProps = {
@@ -32,7 +32,7 @@ const TicketMoreMenu = ({ ticket, trigger }: TicketMoreMenuProps) => {
         <LucideTrash className="h-4 w-4" />
         <span>Delete</span>
       </DropdownMenuItem>
-    ), 
+    ),
   });
 
   // const deleteButton = (
@@ -77,14 +77,17 @@ const TicketMoreMenu = ({ ticket, trigger }: TicketMoreMenuProps) => {
   );
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>{trigger}</DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56" side="right">
-        {TicketStatusRadioGroupItems}
-        <DropdownMenuSeparator />
-        {deleteButton}
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <>
+      {deleteDialog}
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>{trigger}</DropdownMenuTrigger>
+        <DropdownMenuContent className="w-56" side="right">
+          {TicketStatusRadioGroupItems}
+          <DropdownMenuSeparator />
+          {deleteButton}
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </>
   );
 };
 
