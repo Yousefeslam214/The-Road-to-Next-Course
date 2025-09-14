@@ -1,4 +1,10 @@
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
 import Link from "next/link";
 import { ticketPath } from "@/app/path";
 import { TICKET_ICONS } from "../constants";
@@ -8,6 +14,7 @@ import clsx from "clsx";
 import { Ticket } from "@prisma/client";
 // import { prisma } from "@/lib/prisma";
 import { deleteTicket } from "../actions/delete-ticket";
+import { toCurrencyFromCent } from "@/utils/currency";
 
 type TicketItemProps = {
   ticket: Ticket;
@@ -15,6 +22,7 @@ type TicketItemProps = {
 };
 
 const TicketItem = ({ ticket, isDetail }: TicketItemProps) => {
+  console.log("ticket" + ticket.deadline);
   const detailButton = (
     <Button variant="outline" size="icon" asChild>
       <Link href={ticketPath(ticket.id)} className="text-sm underline">
@@ -62,6 +70,14 @@ const TicketItem = ({ ticket, isDetail }: TicketItemProps) => {
             {ticket.content}
           </span>
         </CardContent>
+        <CardFooter className="flex justify-between">
+          <p className="text-sm text-muted-foreground">
+            Deadline: {ticket.deadline}
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Bounty: ${toCurrencyFromCent(ticket.bounty)}
+          </p>
+        </CardFooter>
       </Card>
       <div className="flex flex-col gap-y-1">
         {isDetail ? (
